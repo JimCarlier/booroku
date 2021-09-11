@@ -70,6 +70,11 @@ const login =  async (req, res) => {
     }
 }
 
+const getUsers = async (req, res) => {
+    const usrs = await User.find({});
+    res.send({usrs})
+}
 
 
-module.exports = {register, login};
+
+module.exports = {register, login, getUsers};
