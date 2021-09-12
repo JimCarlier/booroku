@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const ProfileSchema = require('../models/profile').ProfileSchema
+
 const UserSchema = mongoose.Schema({
     name: {
         type: String,
@@ -18,12 +20,7 @@ const UserSchema = mongoose.Schema({
     token: {
         type: String
     },
-    Profile: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Profile'
-        }
-    ]
+    profile: ProfileSchema
 }) 
 const User = mongoose.model('User', UserSchema);
 module.exports = User

@@ -12,4 +12,6 @@ const ProfileSchema = mongoose.Schema({
         type: String,
         required: true
     }
-})
+});
+const Profile = mongoose.model('Profile', ProfileSchema);
+module.exports = {Profile, ProfileSchema};

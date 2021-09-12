@@ -31,7 +31,7 @@ const register = async (req, res) => {
             expiresIn: '2h'
         })
         user.token = token
-        res.status(201).json(user)
+        // res.status(201).json(user)
         res.send(user)
     }
     catch (err) {
@@ -58,8 +58,8 @@ const login =  async (req, res) => {
                 expiresIn: '2h'
             })
             userExist.token = token
-            res.status(201).json(userExist)
-            res.send(userExist)
+            // res.status(201).json(userExist)
+            res.send({userExist: req.user})
         
         }
 
@@ -71,8 +71,8 @@ const login =  async (req, res) => {
 }
 
 const getUsers = async (req, res) => {
-    const usrs = await User.find({});
-    res.send({usrs})
+    const users = await User.find({});
+    res.send({users})
 }
 
 
